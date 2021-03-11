@@ -1,0 +1,69 @@
+
+
+@font-face {
+  font-family: 'digital';
+  src: url('./fonts/digital.woff') format('WOFF');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+.background{
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(./img/cortadas_00001.jpg);
+  background-position-y: -11rem;
+}
+
+.timer-container{
+  position: relative;
+  background-color: hsla(0,100%,0%,.55);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 1140px;
+  height: 12rem;
+
+}
+
+.timer-item{
+  display: inline-flex;
+  position: relative;
+  top: -0.5rem;
+  min-width: 4rem;
+  color: hsla(0, 0%, 80%, 1);
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-family: 'digital';
+}
+
+.timer-number{
+  border-bottom: .5px solid hsla(0, 0%, 80%, .8);
+  padding-bottom: .5rem;
+  width: 100%;
+}
+
+.timer-item::after{
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: -2.5rem;
+}
+.timer-item:nth-child(1)::after{
+  content: 'Dias';
+}
+.timer-item:nth-child(2)::after{
+  content: 'Horas';
+}
+.timer-item:nth-child(3)::after{
+  content: 'Min';
+}
+
+
+
+
+.timer-number{
+  transform: scaleY(2.3);
+}
