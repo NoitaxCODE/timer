@@ -4,44 +4,29 @@ let days = document.getElementById('timer-days'),
     counter = 1,
     counterMinutos = 1,
 //EN ESTA VARIABLE PONGO EL TIEMPO DEL TEMPORIZADOR
-    fechaUno = new Date('2021/03/15 16:30:00'),
+    fechaUno = new Date('2021/03/14 07:30:00'),
     fechaDos = new Date(),
-    showDays = Math.floor(((fechaUno.getTime() - fechaDos.getTime())/3600000)/24)-1,
-    showHours = Math.floor((fechaUno.getTime() - fechaDos.getTime())/3600000),
-    showMinutes = Math.floor((((fechaUno.getTime() - fechaDos.getTime())/3600000) - showHours)*60);
-
-//CORRIJO VALOR DE LOS DIAS Y HORAS
-  if(showDays<0){
-    showDays = 0;
-  }else{
-    showDays = showDays;
-  }
-  if(showHours>=24){
-    showHours = 23
-  }else{
-    showHours = showHours;
-  }
-  console.log(showDays)
-  console.log(showHours)
-  console.log(showMinutes)
+    showDays = ((fechaUno.getTime() - fechaDos.getTime())/3600000)/24,
+    showHours = (showDays - Math.floor(showDays))*24,
+    showMinutes = (showHours - Math.floor(showHours))*60;
 
 //LE AGREGO UN 0 A LOS MENOSRES DE 10
 if(showDays<10){
-  days.innerText = `0${showDays}`
+  days.innerText = `0${Math.floor(showDays)}`
 }else{
-  days.innerText = showDays
+  days.innerText = Math.floor(showDays)
 }
 
 if(showHours<10){
-  hours.innerText = `0${showHours}`
+  hours.innerText = `0${Math.floor(showHours)}`
 }else{
-  hours.innerText = showHours
+  hours.innerText = Math.floor(showHours)
 }
 
 if(showMinutes<10){
-  minutes.innerText = `0${showMinutes}`
+  minutes.innerText = `0${Math.floor(showMinutes)}`
 }else{
-  minutes.innerText = showMinutes
+  minutes.innerText = Math.floor(showMinutes)
 }
 
 let currentDays = Number(days.innerText),
