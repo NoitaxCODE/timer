@@ -4,7 +4,7 @@ let days = document.getElementById('timer-days'),
     counter = 1,
     counterMinutos = 1,
 //EN ESTA VARIABLE PONGO EL TIEMPO DEL TEMPORIZADOR
-    fechaUno = new Date('2021/03/14 07:30:00'),
+    fechaUno = new Date('2021/03/18 1:00:00'),
     fechaDos = new Date(),
     showDays = ((fechaUno.getTime() - fechaDos.getTime())/3600000)/24,
     showHours = (showDays - Math.floor(showDays))*24,
